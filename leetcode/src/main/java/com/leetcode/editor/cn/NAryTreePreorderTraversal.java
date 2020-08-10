@@ -72,11 +72,17 @@ class Solution {
         if (root == null) { return list; }
 
         list.add(root.val);
-        for (Node node : root.children){
-            preOrder(node);
+        // 忘记判空
+        if (root.children != null) {
+            for (Node node : root.children){
+                preOrder(node);
+            }
         }
+
         return list;
     }
+
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

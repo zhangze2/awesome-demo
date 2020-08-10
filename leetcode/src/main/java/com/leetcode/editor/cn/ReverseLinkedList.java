@@ -24,7 +24,7 @@ public class ReverseLinkedList{
     }
 
 
-    // 1. 双指针迭代法， 将节点的 next 指针指向前驱
+    // 1. 双指针迭代法， 将节点的 next 指针指向前驱(读了很多遍题目才理解这句话的意思)
     // 1.1 不知道引入两个前继指针 prev 和 当前指针 current 的作用； 看了视频之后，了解。
     //
     // 视频帮助很大：https://leetcode-cn.com/problems/reverse-linked-list/solution/tu-jie-fan-zhuan-lian-biao-c-by-vin-18/
