@@ -51,7 +51,7 @@ public class TwoSum{
     class Solution {
         public int[] twoSum(int[] nums, int target) {
 
-            // 引入-哈希表，存数组的（值-下标）
+            // 引入-哈希表，存数组的（值-下标），利用在 Map 中map.containsKey(other) 查找，少一层循环（查找的时间复杂度为常数级）
             Map<Integer,Integer> map = new HashMap<>();
 
 

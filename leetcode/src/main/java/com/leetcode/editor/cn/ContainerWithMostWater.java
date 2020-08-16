@@ -33,7 +33,7 @@ public class ContainerWithMostWater{
             // 全局变量
             int maxNum = 0;
             // 最开始公式都搞错了
-            // 思考 ：两个指针什么时候停？
+            // 思考 ：两个指针什么时候停？i++ 和++i 区别
             // 如果 left < right  && num[left] < num[right], 容量为 （right-left）* num[right]
             int right = height.length - 1;
             // 1. for 循环的写法
