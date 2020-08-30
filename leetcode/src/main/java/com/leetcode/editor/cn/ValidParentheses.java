@@ -32,7 +32,7 @@ public class ValidParentheses{
                 return  false;
             }
 
-            Stack<Character> stack = new Stack<Character>();
+            Stack<Character> stack = new Stack<>();
             // 初始化栈，并压一个默认字符
             stack.push('#');
 
