@@ -36,7 +36,7 @@ public class SelectionSort implements Sort {
              * 从而排在第二个2的后面
              * */
             SortUtil.swap(data,i,lowIndex);
-            //打印此时的数组
+            //打印此次循环后的数组
             SortUtil.printSortArgs(data);
         }
         

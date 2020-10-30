@@ -1,51 +1,19 @@
 package sort;
 
-import sort.SortUtil.Sort;
+import org.junit.jupiter.api.Test;
 
-public class MergeSort implements Sort {
+import static org.junit.jupiter.api.Assertions.*;
 
-    @Override
-    public void sort(int[] data) {
-        int[] temp = new int[data.length];
-        mergeSort(data, temp, 0, data.length - 1);
-    }
+/**
+ * @author by zz
+ * @date 2020/8/24
+ */
+class MergeSortTest {
 
-    private void mergeSort(int[] data, int[] temp, int left, int right) {
-        int mid = (left + right) / 2;
-        if (left == right) {
-            return;
-        }
-        //左
-        mergeSort(data, temp, left, mid);
-        mergeSort(data, temp, mid + 1, right);
-
-        for (int i = left; i <= right; i++) {
-            temp[i] = data[i];
-        }
-
-        int i1 = left;
-        int i2 = mid + 1;
-
-        for (int cur = left; cur <= right; cur++) {
-            if (i1 == mid + 1)
-                data[cur] = temp[i2++];
-            else if (i2 > right)
-                data[cur] = temp[i1++];
-            else if (temp[i1] < temp[i2])
-                data[cur] = temp[i1++];
-            else
-                data[cur] = temp[i2++];
-        }
-    }
-
-
-
-    // 方案二
-
-    public void sort2(int[] data) {
+    @Test
+    void sort2() {
         int[] intArr = { 7, 2, 4, 3, 12, 1, 9, 6, 8, 5,11,10};
-        data = intArr;
-        mergeSort2(data, 0, data.length - 1);
+        mergeSort2(intArr, 0, intArr.length - 1);
     }
 
     public static void mergeSort2(int[] data, int left, int right) {
@@ -70,7 +38,7 @@ public class MergeSort implements Sort {
      * @param left
      *            左数组的第一个元素的索引
      * @param center
-     *            左数组的最后一个元素的索引，center+1是右数组第一个元素的索引
+     *            左数组的最后一个元素的索引，center+1 是右数组第一个元素的索引
      * @param right
      *            右数组最后一个元素的索引
      */
@@ -104,5 +72,4 @@ public class MergeSort implements Sort {
             data[tmp] = tmpArr[tmp++];
         }
     }
-
 }

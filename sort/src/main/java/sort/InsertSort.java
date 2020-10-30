@@ -1,6 +1,6 @@
 package sort;
 public class InsertSort implements SortUtil.Sort{
-	
+	@Override
 	public void sort(int data[]) {
 		/* 插入指的是把当前元素，放到左边合适的位置
 		   1. 注意从 i=1 开始
@@ -14,9 +14,10 @@ public class InsertSort implements SortUtil.Sort{
                     SortUtil.swap(data, j, j-1);
                 }
             }
-            
-            SortUtil.printSortArgs(data);//打印此时的数组
-        }       
+
+            //打印此时的数组
+            SortUtil.printSortArgs(data);
+        }
     }
 	
 	
@@ -29,7 +30,8 @@ public class InsertSort implements SortUtil.Sort{
          * 外循环从左向右的第二个元素开始处理array的每一个元素； 并假定当前索引 i 左边的元素序列都已经就序；
          * */
         for(int i=l+1;i<=r;i++) {
-            temp=array[i];//插入排序的策略是将array[i]的值插入到 i 左边已经就序的序列中；
+            //插入排序的策略是将array[i]的值插入到 i 左边已经就序的序列中；
+            temp=array[i];
             index=i-1;
             /**
              * 第一个循环条件保证在到达array最左边时停止

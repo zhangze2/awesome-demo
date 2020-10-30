@@ -85,16 +85,16 @@ public class SortUtil {
 //		sort(intArr, BUBBLE);
 //        System.out.println("----------希尔排序-----------");
 //        sort(intArr, SHELL);
-		System.out.println("----------快速排序-----------");
-		sort(intArr, QUICK);
+//		System.out.println("----------快速排序-----------");
+//		sort(intArr, QUICK);
 //		System.out.println("----------改进快速排序-----------");
 //		sort(intArr, IMPROVED_QUICK);
 //		System.out.println("----------归并排序-----------");
 //		sort(intArr, MERGE);
 //		System.out.println("----------改进归并排序-----------");
 //		sort(intArr, IMPROVED_MERGE);
-//		System.out.println("----------堆排序-----------");
-//		sort(intArr, HEAP);
+		System.out.println("----------堆排序-----------");
+		sort(intArr, HEAP);
 	}
 
 }
