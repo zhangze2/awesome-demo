@@ -18,6 +18,37 @@
 	- 导演
 	- 演员
 
+- 实现
+
+	- Java Beans
+	- Servlet 通过反向依赖获得 DataSource 或者  EJB 的组件
+	- Spring Framework Ioc 容器的优势
+
+		- 基本的
+		- AOP 抽象
+		- 事务抽象
+		- 事件机制
+		- SPI 扩展
+
+			- Bean Factory 扩展
+
+		- 强大的第三方整合
+
+			- Spring Data
+
+				- 关系数据库
+				- 非关系
+
+		- 易测试性
+
+			- Mock
+
+		- 更好的极致面向对象
+
+			- 设计模式
+
+				- 接口定义
+
 ### 实现策略
 
 - 依赖注入 DI
@@ -35,6 +66,14 @@
 - 依赖查找 和 依赖注入的区别
 
 	- 依赖查找是主动或手动的依赖查找方式，通常需要依赖容器或标准 API 实现。而依赖注入则是手动或自动依赖绑定的方式，无需依赖特定的容器和 API
+	- 主动 - 被动
+	- 便利性
+
+		- 一步完成
+
+	- 侵入性
+	- API 依赖性
+	- 可读性
 
 ### BeanFactory VS ApplicationContext VS ObjectFactory
 
@@ -52,6 +91,54 @@
 	- 接口只是一个规范，需要各种实现类去实现这个接口，我们要用的就是这些实用类的方法
 
 - Feign 单元测试注入失败
+
+### 轻量级 Ioc 
+
+- 好处
+
+	- 更大的面向对象 和 产品化
+
+		- VS Java EE
+
+			- 可测试性不够
+
+	- 最大的代码复用
+	- 释放聚品
+
+- 界定
+
+	- 代码管理
+
+		- 运行
+		- 生命周期
+
+	- 快速启动
+	- 配置
+	- 内存占用
+	- 管控渠道-细粒度
+
+### 构造器注入（鼓励） VS Setter 注入
+
+- 构造器注入
+
+	- 名称
+	- 优点
+
+		- 参数过多
+		- 对象 final 
+		- 依赖的对象为空
+		- 避免状态的不可确定性
+
+- Setter 注入
+
+	- 可选
+	- Java Bean properties
+	- self-documenting
+	- 继承
+	- 类型转换
+	- BeanContext
+	- 不能保证 set 的排序（缺点）
+	- 不是每个都必需
 
 ## 数据存储
 
@@ -152,38 +239,70 @@
 	- 文档型数据库
 	- mybatis 不支持mongoDB
 
-## Spring - JDK API
+## Java
 
-### Java 6 API
+### Spring - JDK API
 
-- JDBC 4.0
+- Java 6 API
 
-	- JdbcTemplate
+	- JDBC 4.0
 
-- Common Annoations
+		- JdbcTemplate
 
-	- CommonAnnotationBeanPostProcessor
+	- Common Annoations
 
-- 可插拔注解处理API
+		- CommonAnnotationBeanPostProcessor
 
-  注解急剧膨胀。
-  之前注解来自两类（都是运行时）：
-  1. ASM
-  2. 标准的 Java 反射
-  
-  编译时 @Indexed ，减少 Scan 
-  
+	- 可插拔注解处理API
 
-	- @Indexed
-
-		- 编译时 VS 运行时 @ComponentScan（Base）
-
-- Java Compiler  API
-
-	- TestCompliler（单元测试）
-
-	  运行时单独建立编译器，对 ATP 进行编译 
+	  注解急剧膨胀。
+	  之前注解来自两类（都是运行时）：
+	  1. ASM
+	  2. 标准的 Java 反射
 	  
+	  编译时 @Indexed ，减少 Scan 
+	  
+
+		- @Indexed
+
+			- 编译时 VS 运行时 @ComponentScan（Base）
+
+	- Java Compiler  API
+
+		- TestCompliler（单元测试）
+
+		  运行时单独建立编译器，对 ATP 进行编译 
+		  
+
+### 与笨重的 Java EE API 共舞
+
+- Web
+
+	- Servlet + JSP
+
+		- DispatchServlet
+
+	- JSTL
+	- SOAP
+	- WebServices
+	- WebSocket
+
+		- WebSocketHandler
+
+- 数据存储
+
+	- JtaTransactionManager
+	- JpaTransactionManager
+	- JCacheCache
+
+- Java EE Bean
+
+	- JMS
+	- EJB 2.0
+	- Dependency Injection for Java
+	- Bean Validation
+
+		- LocallValidatorFacotoryBean
 
 ## Spring Bean
 
@@ -568,7 +687,8 @@ Servlet 也有
 
 			- Aware
 
-				- ApplicationAware
+				- ApplicationContextAware
+				- BeanFacotryAware
 
 			- BeanPostProcessor
 
